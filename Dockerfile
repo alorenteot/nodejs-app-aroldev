@@ -1,8 +1,12 @@
-FROM node:14
+FROM node
 WORKDIR /usr/src/app
 COPY package*.json ./
 COPY . ./
 RUN npm install
 COPY . .
-EXPOSE 5000
-CMD [ "npm", "start" ]
+
+ARG PORT=5000
+ENV PORT=${PORT}
+EXPOSE ${PORT}
+
+CMD [ "node", "index.js" ]

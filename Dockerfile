@@ -5,7 +5,7 @@ COPY . ./
 RUN npm install
 COPY . .
 
-ARG PORT=5000
+ARG PORT=9080
 ENV PORT=${PORT}
 EXPOSE ${PORT}
 
